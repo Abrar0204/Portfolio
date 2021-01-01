@@ -202,6 +202,10 @@ body {
   }
 }
 
+.header-svg-image {
+  height: 70rem;
+}
+
 .header-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -400,10 +404,6 @@ body {
   .header-content-contact-box .contact-list {
     width: 25rem;
   }
-}
-
-.header-svg-image {
-  height: 70rem;
 }
 
 .icon-button {
@@ -685,6 +685,17 @@ body {
   z-index: 10;
   height: 100%;
   width: 100%;
+}
+
+.about-image-box::after {
+  content: "";
+  position: absolute;
+  background-color: #f95353;
+  height: 100%;
+  width: 100%;
+  top: -3rem;
+  left: -3rem;
+  border-radius: 5px;
 }
 
 .work {
