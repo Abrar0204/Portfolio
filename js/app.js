@@ -1,7 +1,18 @@
 gsap.registerPlugin(ScrollTrigger);
 
+function toggleMenu() {
+	const menu = document.querySelector('.navbar');
+
+	menu.classList.toggle('open');
+}
+
 function init() {
 	const navItems = [ ...document.querySelectorAll('.navbar-list-item-link') ];
+
+	const header = document.getElementById('header');
+	const navbar = document.getElementById('nav');
+	const about = document.getElementById('about');
+	const skills = document.getElementById('skills');
 
 	navItems.forEach((navItem) => {
 		const tl = gsap.timeline({ paused: true });
@@ -19,7 +30,6 @@ function init() {
 				duration: 0.2
 			});
 		navItem.addEventListener('mouseover', () => {
-			// console.log('hover');
 			tl.play();
 		});
 
@@ -28,83 +38,106 @@ function init() {
 		});
 	});
 
-	const header = document.getElementById('header');
-	const navbar = document.getElementById('nav');
 	const headerTimeline = gsap.timeline({});
-	if (screen.width <= 900) {
-		console.log(screen.width);
-		headerTimeline.fromTo(
-			navbar,
-			{
-				opacity: 0,
-				y: '-100vh'
-			},
-			{
-				opacity: 1,
-				y: 0,
-				duration: 1,
-				ease: 'power1.out'
-			}
-		);
-	}
+	// gsap.set(header, { y: -40 });
+	// if (screen.width <= 900) {
+	// 	console.log(screen.width);
+	// 	headerTimeline.fromTo(
+	// 		navbar,
+	// 		{
+	// 			opacity: 0,
+	// 			y: '-100vh'
+	// 		},
+	// 		{
+	// 			opacity: 1,
+	// 			y: 0,
+	// 			duration: 1,
+	// 			ease: 'power1.out'
+	// 		}
+	// 	);
+	// }
+	// headerTimeline
+	// 	.fromTo(
+	// 		header.getElementsByClassName('header-content-text'),
+	// 		{
+	// 			opacity: 0,
+	// 			x: '-100vw'
+	// 		},
+	// 		{
+	// 			duration: 1,
+	// 			opacity: 1,
+	// 			x: 0,
+	// 			stagger: 0.4
+	// 		}
+	// 	)
+	// 	.fromTo(
+	// 		header.getElementsByClassName('header-content-button-list'),
+	// 		{
+	// 			opacity: 0,
+	// 			x: '-50vw'
+	// 		},
+	// 		{
+	// 			opacity: 1,
+	// 			x: 0
+	// 		},
+	// 		'-=.5'
+	// 	)
+	// 	.fromTo(
+	// 		header.getElementsByClassName('header-svg'),
+	// 		{
+	// 			opacity: 0,
+	// 			x: '100vw'
+	// 		},
+	// 		{
+	// 			duration: 1,
+	// 			opacity: 1,
+	// 			x: 0,
+	// 			stagger: 0.4
+	// 		},
+	// 		'-=1'
+	// 	);
 	headerTimeline
 		.fromTo(
-			header.getElementsByClassName('header-content-text'),
+			header.querySelector('.header-content-text-large'),
 			{
-				opacity: 0,
-				x: '-100vw'
+				width: 0
 			},
 			{
-				duration: 1,
-				opacity: 1,
-				x: 0,
-				stagger: 0.4
-			}
+				width: '7rem',
+				ease: SteppedEase.config(3)
+			},
+			0
 		)
 		.fromTo(
-			header.getElementsByClassName('header-content-button-list'),
+			header.querySelector('.typewriter'),
+			0.5,
 			{
-				opacity: 0,
-				x: '-50vw'
+				'border-right-color': '#1d182f'
 			},
 			{
-				opacity: 1,
-				x: 0
+				'border-right-color': '#1d182f23',
+				repeat: -1,
+				ease: SteppedEase.config(3)
 			},
-			'-=.5'
-		)
-		.fromTo(
-			header.getElementsByClassName('header-svg'),
-			{
-				opacity: 0,
-				x: '100vw'
-			},
-			{
-				duration: 1,
-				opacity: 1,
-				x: 0,
-				stagger: 0.4
-			},
-			'-=1'
+			0
 		);
 
-	if (screen.width > 900) {
-		console.log(screen.width);
-		headerTimeline.fromTo(
-			navbar,
-			{
-				opacity: 0,
-				y: '100vh'
-			},
-			{
-				opacity: 1,
-				y: 0,
-				duration: 1,
-				ease: 'power1.out'
-			}
-		);
-	}
-	const about = document.getElementById('about');
+	// if (screen.width > 900) {
+	// 	headerTimeline.fromTo(
+	// 		navbar,
+	// 		{
+	// 			opacity: 0,
+	// 			y: '100vh'
+	// 		},
+	// 		{
+	// 			opacity: 1,
+	// 			y: 0,
+	// 			duration: 1,
+	// 			ease: 'power1.out'
+	// 		}
+	// 	);
+	// }
+
 	const aboutTimeline = gsap.timeline({
 		scrollTrigger: {
 			trigger: about,
@@ -158,8 +191,6 @@ function init() {
 	// 	},
 	// 	0
 	// );
-
-	const skills = document.getElementById('skills');
 
 	const skillTimeline = gsap.timeline({
 		scrollTrigger: {
