@@ -93,8 +93,8 @@ body {
 		left: 0;
 		height: 10vh;
 		width: 100%;
-		background-color: $primaryColor;
-		box-shadow: 0 3px 5px #343c4486;
+		background-color: #e5ebff;
+		box-shadow: 0 1px 10px #343c4441;
 	}
 
 	@media only screen and (max-width: $largeMobile) {
@@ -307,7 +307,9 @@ body {
 		justify-content: center;
 		transform: translateY(-40px);
 	}
-
+	& .call-to-action-holder {
+		opacity: 0;
+	}
 	&-svg {
 		// height: 100%;
 
@@ -325,6 +327,7 @@ body {
 			}
 			&.small-screen {
 				display: none;
+				opacity: 0;
 				height: 35rem;
 				@media only screen and(max-width:1200px) {
 					display: block;
@@ -357,6 +360,7 @@ body {
 			letter-spacing: -.3rem;
 			@media only screen and (max-width: $largeMobile) {
 				align-items: center;
+				letter-spacing: 0rem;
 			}
 			& .typewriter {
 				width: 0;
@@ -371,7 +375,7 @@ body {
 				overflow: hidden;
 				// transform: translateY(-50%);
 				box-sizing: content-box;
-
+				opacity: 0;
 				@media only screen and (max-width: $largeMobile) {
 					font-size: 3.5rem;
 				}
@@ -381,6 +385,7 @@ body {
 				font-size: 7rem;
 				font-weight: 400;
 				letter-spacing: -.5rem;
+				opacity: 0;
 				@media only screen and (max-width: $largeMobile) {
 					font-size: 6rem;
 				}
@@ -391,6 +396,7 @@ body {
 			&-medium {
 				font-size: 4rem;
 				font-weight: 300;
+				opacity: 0;
 				@media only screen and (max-width: $largeMobile) {
 					font-size: 3rem;
 					font-weight: 600;
@@ -477,7 +483,7 @@ body {
 			// z-index: -1;
 			content: 'Check Out My Work';
 			padding: 1.7rem 2rem;
-			transform: scale(1.05);
+			transform: scale(1.07);
 			position: absolute;
 			top: -1.5rem;
 			left: 2rem;
@@ -684,21 +690,53 @@ body {
 		justify-content: center;
 		align-items: center;
 		align-content: center;
+		@media only screen and(max-width:$largeMobile) {
+			grid-template-columns: 1fr;
+		}
 		& .work-item {
 			// display: flex;
 			// justify-content: space-between;
 			// align-items: stretch;
 			// margin: 2rem 0rem;
-			padding: 2rem;
-			@media only screen and (max-width: $largeMobile) {
-				width: 90%;
+			margin: 2rem;
+			position: relative;
+
+			&-backdrop {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($textColor, $alpha: 0.7);
+				opacity: 0;
 			}
 			&-image {
 				width: 100%;
 
 				& img {
 					width: 100%;
-					height: auto;
+					// height: auto;
+				}
+			}
+			&-description {
+				position: absolute;
+				// margin: 2rem;
+				height: 100%;
+				width: 100%;
+				padding: 5rem 3rem;
+				top: 0;
+				left: 0;
+				color: $primaryColor;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				align-items: flex-start;
+
+				&-header {
+					font-size: 2.3rem;
+				}
+				&-sub-header {
+					font-size: 1.7rem;
 				}
 			}
 			// &-description {

@@ -115,9 +115,9 @@ body {
     left: 0;
     height: 10vh;
     width: 100%;
-    background-color: #f3f6ff;
-    -webkit-box-shadow: 0 3px 5px #343c4486;
-            box-shadow: 0 3px 5px #343c4486;
+    background-color: #e5ebff;
+    -webkit-box-shadow: 0 1px 10px #343c4441;
+            box-shadow: 0 1px 10px #343c4441;
   }
 }
 
@@ -420,6 +420,10 @@ body {
   }
 }
 
+.header .call-to-action-holder {
+  opacity: 0;
+}
+
 .header-svg {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -444,6 +448,7 @@ body {
 
 .header-svg-image.small-screen {
   display: none;
+  opacity: 0;
   height: 35rem;
 }
 
@@ -508,6 +513,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    letter-spacing: 0rem;
   }
 }
 
@@ -525,6 +531,7 @@ body {
   overflow: hidden;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 580px) {
@@ -537,6 +544,7 @@ body {
   font-size: 7rem;
   font-weight: 400;
   letter-spacing: -.5rem;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 580px) {
@@ -554,6 +562,7 @@ body {
 .header-content-text-medium {
   font-size: 4rem;
   font-weight: 300;
+  opacity: 0;
 }
 
 @media only screen and (max-width: 580px) {
@@ -648,8 +657,8 @@ body {
 .button.call-to-action::after {
   content: 'Check Out My Work';
   padding: 1.7rem 2rem;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
   position: absolute;
   top: -1.5rem;
   left: 2rem;
@@ -926,14 +935,26 @@ body {
       align-content: center;
 }
 
-.work-content .work-item {
-  padding: 2rem;
+@media only screen and (max-width: 580px) {
+  .work-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
-@media only screen and (max-width: 580px) {
-  .work-content .work-item {
-    width: 90%;
-  }
+.work-content .work-item {
+  margin: 2rem;
+  position: relative;
+}
+
+.work-content .work-item-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(29, 24, 47, 0.7);
+  opacity: 0;
 }
 
 .work-content .work-item-image {
@@ -942,7 +963,37 @@ body {
 
 .work-content .work-item-image img {
   width: 100%;
-  height: auto;
+}
+
+.work-content .work-item-description {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5rem 3rem;
+  top: 0;
+  left: 0;
+  color: #f3f6ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.work-content .work-item-description-header {
+  font-size: 2.3rem;
+}
+
+.work-content .work-item-description-sub-header {
+  font-size: 1.7rem;
 }
 
 .footer {

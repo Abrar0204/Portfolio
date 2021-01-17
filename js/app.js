@@ -13,34 +13,8 @@ function init() {
 	const navbar = document.getElementById('nav');
 	const about = document.getElementById('about');
 	const skills = document.getElementById('skills');
-
-	// navItems.forEach((navItem) => {
-	// 	const tl = gsap.timeline({ paused: true });
-	// 	tl
-	// 		.to(navItem.getElementsByClassName('nav-icon'), {
-	// 			opacity: 0,
-
-	// 			ease: 'easeIn',
-	// 			duration: 0.3
-	// 		})
-	// 		.to(navItem.getElementsByClassName('nav-name'), {
-	// 			opacity: 1,
-
-	// 			ease: 'easeIn',
-	// 			duration: 0.3
-	// 		});
-	// 	navItem.addEventListener('mouseover', () => {
-	// 		if (screen.width > 580) {
-	// 			tl.play();
-	// 		}
-	// 	});
-
-	// 	navItem.addEventListener('mouseleave', () => {
-	// 		if (screen.width > 580) {
-	// 			tl.reverse();
-	// 		}
-	// 	});
-	// });
+	const works = document.getElementById('work');
+	const workItems = [ ...document.querySelectorAll('.work-item') ];
 
 	const headerTimeline = gsap.timeline({});
 
@@ -48,11 +22,13 @@ function init() {
 		.fromTo(
 			header.querySelector('.header-content-text-large'),
 			{
-				width: 0
+				width: 0,
+				opacity: 1
 			},
 			{
 				width: '7rem',
-				ease: SteppedEase.config(3)
+				ease: SteppedEase.config(3),
+				duration: 1.5
 			}
 		)
 		.fromTo(
@@ -65,21 +41,34 @@ function init() {
 				'border-right-color': '#1d182f23',
 				repeat: -1,
 				ease: SteppedEase.config(3)
-			},
-			0
+			}
 		)
-		.from(header.querySelector('.header-content-text-extra-large'), {
-			y: 20,
-			opacity: 0,
-			duration: 0.7,
-			ease: 'easeIn'
-		})
-		.from([ header.querySelector('.header-content-text-medium'), header.querySelector('.call-to-action-holder') ], {
-			x: -20,
-			opacity: 0,
-			duration: 0.7,
-			ease: 'easeIn'
-		})
+		.fromTo(
+			header.querySelector('.header-content-text-extra-large'),
+			{
+				y: 20,
+				opacity: 0,
+				duration: 0.7,
+				ease: 'easeIn'
+			},
+			{
+				opacity: 1,
+				y: 0
+			}
+		)
+		.fromTo(
+			[ header.querySelector('.header-content-text-medium'), header.querySelector('.call-to-action-holder') ],
+			{
+				x: -20,
+				opacity: 0,
+				duration: 0.7,
+				ease: 'easeIn'
+			},
+			{
+				opacity: 1,
+				x: 0
+			}
+		)
 		.fromTo(
 			header.querySelector('#Background'),
 			{
@@ -88,7 +77,8 @@ function init() {
 			},
 			{
 				opacity: 1,
-				y: 0
+				y: 0,
+				duration: 0.7
 			}
 		)
 		.fromTo(
@@ -99,49 +89,59 @@ function init() {
 			},
 			{
 				y: 0,
-				opacity: 1
-			}
+				opacity: 1,
+				duration: 0.7
+			},
+			'-=0.7'
+		)
+		.fromTo(
+			header.querySelector('.small-screen'),
+			{
+				opacity: 0,
+				y: -40
+			},
+			{
+				opacity: 1,
+				y: 0
+			},
+			0
 		);
-
-	// if (screen.width > 900) {
-	// 	headerTimeline.fromTo(
-	// 		navbar,
-	// 		{
-	// 			opacity: 0,
-	// 			y: '100vh'
-	// 		},
-	// 		{
-	// 			opacity: 1,
-	// 			y: 0,
-	// 			duration: 1,
-	// 			ease: 'power1.out'
-	// 		}
-	// 	);
-	// }
 
 	const aboutTimeline = gsap.timeline({
 		scrollTrigger: {
 			trigger: about,
-			start: 'top bottom-=25%',
+			start: 'top center+=20%',
 			end: 'end center',
 			toggleActions: 'play none none reverse'
 			// markers: true
 		}
 	});
 	aboutTimeline
-		.from([ about.getElementsByClassName('about-content'), about.getElementsByClassName('about-header') ], {
+		.from(about.getElementsByClassName('about-header'), {
 			y: -50,
 			x: -30,
 			opacity: 0,
-			duration: 1
+			duration: 1,
+			ease: 'power2.easeIn'
 		})
+		.from(
+			about.querySelectorAll('.about-content-description'),
+			{
+				opacity: 0,
+				x: -100,
+				ease: 'power2.easeIn',
+				stagger: 0.4
+			},
+			0
+		)
 		.from(
 			about.getElementsByClassName('about-image-box-background'),
 			{
 				y: -60,
 				x: 40,
 				opacity: 0,
-				duration: 1
+				duration: 1,
+				ease: 'power2.easeIn'
 			},
 			0
 		)
@@ -151,27 +151,11 @@ function init() {
 				y: 60,
 				x: -40,
 				opacity: 0,
-				duration: 1
+				duration: 1,
+				ease: 'power2.easeIn'
 			},
 			0
 		);
-
-	// const parralaxTl = gsap.timeline({
-	// 	ease: 'none',
-	// 	scrollTrigger: {
-	// 		trigger: about,
-	// 		start: 'top bottom',
-	// 		scrub: true
-	// 	}
-	// });
-	// parralaxTl.from(
-	// 	'.about-image-box-photo',
-	// 	{
-	// 		y: '-30%',
-	// 		duration: 2
-	// 	},
-	// 	0
-	// );
 
 	const skillTimeline = gsap.timeline({
 		scrollTrigger: {
@@ -187,7 +171,57 @@ function init() {
 		opacity: 0,
 		y: 10,
 		stagger: 0.2,
-		duration: 1
+		duration: 1,
+		ease: 'power2.easeIn'
+	});
+
+	workTimeline = gsap.timeline({
+		scrollTrigger: {
+			trigger: works,
+			start: 'center-=5% bottom-=10%',
+			end: 'end center',
+			toggleActions: 'play none none reverse'
+			// markers: true
+		}
+	});
+
+	workTimeline.from(workItems, {
+		opacity: 0,
+		y: 20,
+		stagger: 0.4,
+		duration: 0.7,
+		ease: 'power2.easeIn'
+	});
+
+	workItems.forEach((work) => {
+		const workItemTimeline = gsap.timeline({ paused: true });
+
+		workItemTimeline
+			.fromTo(
+				work.getElementsByClassName('work-item-backdrop'),
+				{
+					opacity: 0,
+					ease: 'power2.easeIn'
+				},
+				{
+					opacity: 1
+				}
+			)
+			.from(
+				work.getElementsByClassName('work-item-description'),
+				{
+					opacity: 0,
+					y: -20,
+					ease: 'power2.easeIn'
+				},
+				{
+					opacity: 1,
+					y: 0
+				}
+			);
+
+		work.addEventListener('mouseover', () => workItemTimeline.play());
+		work.addEventListener('mouseleave', () => workItemTimeline.reverse());
 	});
 }
 
