@@ -14,88 +14,36 @@ function init() {
 	const about = document.getElementById('about');
 	const skills = document.getElementById('skills');
 
-	navItems.forEach((navItem) => {
-		const tl = gsap.timeline({ paused: true });
-		tl
-			.to(navItem.getElementsByClassName('nav-icon'), {
-				opacity: 0,
-				y: -20,
-				ease: 'easeIn',
-				duration: 0.2
-			})
-			.to(navItem.getElementsByClassName('nav-name'), {
-				opacity: 1,
-				y: -20,
-				ease: 'easeIn',
-				duration: 0.2
-			});
-		navItem.addEventListener('mouseover', () => {
-			tl.play();
-		});
+	// navItems.forEach((navItem) => {
+	// 	const tl = gsap.timeline({ paused: true });
+	// 	tl
+	// 		.to(navItem.getElementsByClassName('nav-icon'), {
+	// 			opacity: 0,
 
-		navItem.addEventListener('mouseleave', () => {
-			tl.reverse();
-		});
-	});
+	// 			ease: 'easeIn',
+	// 			duration: 0.3
+	// 		})
+	// 		.to(navItem.getElementsByClassName('nav-name'), {
+	// 			opacity: 1,
+
+	// 			ease: 'easeIn',
+	// 			duration: 0.3
+	// 		});
+	// 	navItem.addEventListener('mouseover', () => {
+	// 		if (screen.width > 580) {
+	// 			tl.play();
+	// 		}
+	// 	});
+
+	// 	navItem.addEventListener('mouseleave', () => {
+	// 		if (screen.width > 580) {
+	// 			tl.reverse();
+	// 		}
+	// 	});
+	// });
 
 	const headerTimeline = gsap.timeline({});
-	// gsap.set(header, { y: -40 });
-	// if (screen.width <= 900) {
-	// 	console.log(screen.width);
-	// 	headerTimeline.fromTo(
-	// 		navbar,
-	// 		{
-	// 			opacity: 0,
-	// 			y: '-100vh'
-	// 		},
-	// 		{
-	// 			opacity: 1,
-	// 			y: 0,
-	// 			duration: 1,
-	// 			ease: 'power1.out'
-	// 		}
-	// 	);
-	// }
-	// headerTimeline
-	// 	.fromTo(
-	// 		header.getElementsByClassName('header-content-text'),
-	// 		{
-	// 			opacity: 0,
-	// 			x: '-100vw'
-	// 		},
-	// 		{
-	// 			duration: 1,
-	// 			opacity: 1,
-	// 			x: 0,
-	// 			stagger: 0.4
-	// 		}
-	// 	)
-	// 	.fromTo(
-	// 		header.getElementsByClassName('header-content-button-list'),
-	// 		{
-	// 			opacity: 0,
-	// 			x: '-50vw'
-	// 		},
-	// 		{
-	// 			opacity: 1,
-	// 			x: 0
-	// 		},
-	// 		'-=.5'
-	// 	)
-	// 	.fromTo(
-	// 		header.getElementsByClassName('header-svg'),
-	// 		{
-	// 			opacity: 0,
-	// 			x: '100vw'
-	// 		},
-	// 		{
-	// 			duration: 1,
-	// 			opacity: 1,
-	// 			x: 0,
-	// 			stagger: 0.4
-	// 		},
-	// 		'-=1'
-	// 	);
+
 	headerTimeline
 		.fromTo(
 			header.querySelector('.header-content-text-large'),
@@ -105,8 +53,7 @@ function init() {
 			{
 				width: '7rem',
 				ease: SteppedEase.config(3)
-			},
-			0
+			}
 		)
 		.fromTo(
 			header.querySelector('.typewriter'),
@@ -120,6 +67,40 @@ function init() {
 				ease: SteppedEase.config(3)
 			},
 			0
+		)
+		.from(header.querySelector('.header-content-text-extra-large'), {
+			y: 20,
+			opacity: 0,
+			duration: 0.7,
+			ease: 'easeIn'
+		})
+		.from([ header.querySelector('.header-content-text-medium'), header.querySelector('.call-to-action-holder') ], {
+			x: -20,
+			opacity: 0,
+			duration: 0.7,
+			ease: 'easeIn'
+		})
+		.fromTo(
+			header.querySelector('#Background'),
+			{
+				y: '-100',
+				opacity: 0
+			},
+			{
+				opacity: 1,
+				y: 0
+			}
+		)
+		.fromTo(
+			header.querySelector('#Me'),
+			{
+				y: '100',
+				opacity: 0
+			},
+			{
+				y: 0,
+				opacity: 1
+			}
 		);
 
 	// if (screen.width > 900) {
@@ -212,6 +193,12 @@ function init() {
 
 window.addEventListener('load', () => {
 	init();
+});
+
+window.addEventListener('resize', () => {
+	if (screen.width < 580) {
+		init();
+	}
 });
 
 // skillItems.forEach((skillItem) => {
