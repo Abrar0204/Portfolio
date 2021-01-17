@@ -107,6 +107,7 @@ body {
 		@media only screen and (max-width: $largeMobile) {
 			height: 20vh;
 			justify-content: flex-start;
+			align-items: center;
 			flex-direction: column;
 
 			& .navbar-list {
