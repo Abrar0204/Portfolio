@@ -195,12 +195,6 @@ window.addEventListener('load', () => {
 	init();
 });
 
-window.addEventListener('resize', () => {
-	if (screen.width < 580) {
-		init();
-	}
-});
-
 // skillItems.forEach((skillItem) => {
 //     skillItem.addEventListener('mouseover', (event) => {
 //         console.log(`clientX: ${event.clientX}`);
