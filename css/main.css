@@ -162,13 +162,8 @@ body {
             align-items: center;
     width: 100%;
   }
-  .navbar.open .navbar-list-item-link svg {
-    width: 3rem;
-    height: 3rem;
-  }
   .navbar.open .navbar-list-item-link .nav-name {
     opacity: 1;
-    font-size: 3rem;
     font-weight: 600;
   }
 }
