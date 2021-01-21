@@ -45,15 +45,14 @@ function init() {
 		.fromTo(
 			header.querySelector('.header-content-text-extra-large'),
 			{
-				transformOrigin: 'center top',
-				rotateX: -90,
+				y: -20,
 				opacity: 0,
 				duration: 0.7,
 				ease: 'Bounce.easeIn'
 			},
 			{
-				opacity: 1,
-				rotateX: 0
+				y: 0,
+				opacity: 1
 			}
 		)
 		.fromTo(
