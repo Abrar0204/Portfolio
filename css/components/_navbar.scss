@@ -1,0 +1,191 @@
+.navbar {
+	width: 8rem;
+	// grid-area: "navbar";
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100%;
+	z-index: 10;
+	@media only screen and (max-width: $tablet) {
+		flex-direction: row;
+		align-items: center;
+		top: 0;
+		left: 0;
+		height: 10vh;
+		width: 100%;
+		background-color: #e5ebff;
+		box-shadow: 0 1px 10px #343c4441;
+	}
+
+	@media only screen and (max-width: $largeMobile) {
+		// transition: height 1s ease;
+
+		justify-content: flex-start;
+	}
+
+	&.open {
+		@media only screen and (max-width: $largeMobile) {
+			height: 20vh;
+			justify-content: flex-start;
+			align-items: center;
+			flex-direction: column;
+
+			& .navbar-list {
+				display: flex;
+
+				height: 100%;
+				width: 80%;
+
+				&-item {
+					&-link {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						width: 100%;
+
+						& .nav-name {
+							opacity: 1;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&-logo-menu-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@media only screen and (max-width: $largeMobile) {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&-logo {
+		margin: 3rem 0rem;
+		@media only screen and (max-width: $tablet) {
+			padding: 0rem 5rem;
+		}
+		& svg {
+			width: 5rem;
+			height: 5rem;
+			& path {
+				fill: $textColor;
+			}
+		}
+	}
+
+	&-menu {
+		border: none;
+		outline: none;
+		&:focus {
+			border: none;
+		}
+		display: none;
+		background-color: $textColor;
+		margin: 0 5rem;
+		padding: 1rem;
+		border-radius: 2px;
+		&:hover {
+			cursor: pointer;
+		}
+
+		@media only screen and (max-width: $largeMobile) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&-list {
+		margin: 5rem 0rem;
+		@media only screen and (max-width: $tablet) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 50%;
+			margin: 0rem 10rem;
+		}
+		@media only screen and (max-width: $largeMobile) {
+			margin: 0rem;
+			display: none;
+		}
+
+		&-item {
+			padding: 2rem 1rem;
+			@media only screen and (max-width: $tablet) {
+				padding: 1rem 2rem;
+			}
+			@media only screen and (max-width: $largeMobile) {
+				padding: 1rem 1rem;
+			}
+
+			&-link,
+			&-link:visited,
+			&-link:link {
+				text-decoration: none;
+				color: $textColor;
+				font-size: 2rem;
+				font-weight: 600;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				// margin: .5rem 0rem;
+
+				@media only screen and (min-width: 581px) {
+					position: relative;
+					&:hover {
+						& svg {
+							opacity: 0;
+						}
+						& .nav-name {
+							opacity: 1;
+						}
+					}
+				}
+
+				& svg {
+					height: 2.7rem;
+					width: 2.7rem;
+					transition: all .4s ease-in;
+				}
+				& .nav-name {
+					color: $textColor;
+					font-size: 1.5rem;
+					letter-spacing: .2rem;
+					opacity: 0;
+					padding: .5rem 0rem;
+
+					@media only screen and (min-width: 581px) {
+						position: absolute;
+						transition: all .4s ease-in;
+					}
+					// height: 100%;
+					// width: 100%;
+					// top: 0;
+					// left: 0;
+				}
+			}
+		}
+	}
+
+	.vl {
+		height: 100%;
+		background-color: $textColor;
+		width: .2rem;
+		border-radius: .05rem;
+		@media only screen and (max-width: $tablet) {
+			height: .2rem;
+			width: 30vw;
+		}
+		@media only screen and (max-width: $largeMobile) {
+			display: none;
+		}
+	}
+}

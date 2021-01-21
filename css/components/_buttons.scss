@@ -1,0 +1,110 @@
+.icon-button {
+	&:visited,
+	&:link {
+		text-decoration: none;
+	}
+
+	height: 100%;
+	width: 100%;
+
+	& img {
+		width: 3rem;
+		height: 3rem;
+	}
+
+	&.large img {
+		width: 4rem;
+		height: 4rem;
+	}
+}
+
+.button {
+	&:visited,
+	&:link {
+		text-decoration: none;
+	}
+
+	text-decoration: none;
+	font-size: 1.5rem;
+	padding: 1rem 1.5rem;
+
+	&.primary {
+		color: $primaryColor;
+		background-color: $textColor;
+		font-weight: 600;
+	}
+
+	&.slideIn {
+		color: $textColor;
+		box-shadow: inset 0 0 0 0 $textColor;
+		border: .1rem solid $textColor;
+		transition: all .3s ease-in;
+
+		&:hover {
+			box-shadow: inset 400px 0 0 0 $textColor;
+			color: $primaryColor;
+		}
+	}
+
+	&.call-to-action {
+		padding: 1.7rem 2rem;
+		font-size: 2rem;
+
+		letter-spacing: .05rem;
+		position: relative;
+		color: $primaryColor;
+		// background-color: #1d182f3a;
+		border: 2px solid $textColor;
+
+		@media only screen and (max-width: 1100px) {
+			background-color: $textColor;
+			position: static;
+			&::after {
+				display: none;
+			}
+		}
+
+		&::after {
+			// z-index: -1;
+			content: 'Check Out My Work';
+			padding: 1.7rem 2rem;
+			transform: scale(1.07);
+			position: absolute;
+			top: -1.5rem;
+			left: 2rem;
+			background-color: $textColor;
+			height: 100%;
+			width: 100%;
+			transition: all .2s ease-in;
+		}
+		&:hover {
+			&::after {
+				top: 0rem;
+				left: 0rem;
+			}
+		}
+	}
+}
+
+.work-button {
+	&:link,
+	&:visited {
+		text-decoration: none;
+	}
+	text-decoration: none;
+	background-color: $primaryColor;
+	color: $textColor;
+	padding: 1rem 1.5rem;
+	// font-weight: 600;
+	letter-spacing: .1rem;
+	font-size: 1.5rem;
+	text-align: center;
+	&:first-child {
+		margin-right: 3rem;
+	}
+	@media only screen and (max-width: $largeMobile) {
+		background-color: $textColor;
+		color: $primaryColor;
+		font-size: 2rem;
+	}
+}

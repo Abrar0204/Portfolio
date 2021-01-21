@@ -1,0 +1,130 @@
+.header {
+	display: flex;
+	justify-content: space-evenly;
+	// align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateY(-40px);
+
+	&-source-code {
+		font-family: 'Source Code Pro', 'Nunito', sans-serif;
+	}
+
+	@media only screen and (max-width: 1100px) {
+		transform: translateY(0);
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		// padding: rem 0rem;
+		padding: 3rem 0rem;
+	}
+
+	@media only screen and (max-width: $largeMobile) {
+		justify-content: center;
+		transform: translateY(-40px);
+	}
+	& .call-to-action-holder {
+		opacity: 0;
+	}
+	&-svg {
+		// height: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		// position: relative;
+		// background: url('../res/svg/Me_Background.svg') no-repeat;
+		// background-size: contain;
+
+		&-image {
+			height: 37rem;
+			@media only screen and (max-width: 1200px) {
+				display: none;
+			}
+			&.small-screen {
+				display: none;
+				opacity: 0;
+				height: 35rem;
+				@media only screen and(max-width:1200px) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		width: 100%;
+
+		@media only screen and (max-width: 1100px) {
+			order: 2;
+			justify-content: center;
+			align-items: center;
+		}
+		// @media only screen and (max-width: $largeMobile) {
+		// }
+		&-text {
+			margin: 5rem 0rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: flex-start;
+			line-height: 1.5;
+			letter-spacing: -.3rem;
+			@media only screen and (max-width: $largeMobile) {
+				align-items: center;
+				letter-spacing: 0rem;
+			}
+			& .typewriter {
+				width: 0;
+				border-right: 2px solid $textColor;
+			}
+			&-large {
+				font-size: 4.5rem;
+				font-weight: 300;
+				width: 7rem;
+				position: relative;
+				white-space: nowrap;
+				overflow: hidden;
+				// transform: translateY(-50%);
+				box-sizing: content-box;
+				opacity: 0;
+				@media only screen and (max-width: $largeMobile) {
+					font-size: 3.5rem;
+				}
+			}
+
+			&-extra-large {
+				font-size: 7rem;
+				font-weight: 400;
+				letter-spacing: -.5rem;
+				opacity: 0;
+				@media only screen and (max-width: $largeMobile) {
+					font-size: 6rem;
+				}
+				@media only screen and (max-width: 400px) {
+					font-size: 5rem;
+				}
+			}
+			&-medium {
+				font-size: 4rem;
+				font-weight: 300;
+				opacity: 0;
+				@media only screen and (max-width: $largeMobile) {
+					font-size: 3rem;
+					font-weight: 600;
+				}
+			}
+		}
+
+		&-button-list {
+			margin: 3rem 0rem;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
+	}
+}

@@ -28,12 +28,11 @@ function init() {
 			{
 				width: '7rem',
 				ease: SteppedEase.config(3),
-				duration: 1.5
+				duration: 1
 			}
 		)
 		.fromTo(
 			header.querySelector('.typewriter'),
-			0.5,
 			{
 				'border-right-color': '#1d182f'
 			},
@@ -46,14 +45,15 @@ function init() {
 		.fromTo(
 			header.querySelector('.header-content-text-extra-large'),
 			{
-				y: 20,
+				transformOrigin: 'center top',
+				rotateX: -90,
 				opacity: 0,
 				duration: 0.7,
-				ease: 'easeIn'
+				ease: 'Bounce.easeIn'
 			},
 			{
 				opacity: 1,
-				y: 0
+				rotateX: 0
 			}
 		)
 		.fromTo(
