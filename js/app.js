@@ -177,17 +177,16 @@ function init() {
 	workTimeline = gsap.timeline({
 		scrollTrigger: {
 			trigger: works,
-			start: 'center-=5% bottom-=10%',
+			start: 'start+=20% bottom-=10%',
 			end: 'end center',
 			toggleActions: 'play none none reverse'
-			// markers: true
 		}
 	});
 
 	workTimeline.from(workItems, {
 		opacity: 0,
 		y: 20,
-		stagger: 0.4,
+		stagger: 0.5,
 		duration: 0.7,
 		ease: 'power2.easeIn'
 	});

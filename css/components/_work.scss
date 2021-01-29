@@ -49,6 +49,12 @@
 					background-image: none;
 				}
 			}
+			&.emaily {
+				background-image: linear-gradient(to bottom right, #5a809b, #00344b);
+				@media only screen and (max-width: $largeMobile) {
+					background-image: none;
+				}
+			}
 			@media only screen and (max-width: $largeMobile) {
 				padding: 0rem;
 				box-shadow: 2rem 2.6rem 4rem rgba($color: #000000, $alpha: 0.25);

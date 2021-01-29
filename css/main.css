@@ -882,6 +882,17 @@ body {
   }
 }
 
+.work-content .work-item.emaily {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#5a809b), to(#00344b));
+  background-image: linear-gradient(to bottom right, #5a809b, #00344b);
+}
+
+@media only screen and (max-width: 580px) {
+  .work-content .work-item.emaily {
+    background-image: none;
+  }
+}
+
 @media only screen and (max-width: 580px) {
   .work-content .work-item {
     padding: 0rem;
