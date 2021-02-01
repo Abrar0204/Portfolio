@@ -436,6 +436,11 @@ body {
           align-items: center;
 }
 
+.header-svg #Me,
+.header-svg #Background {
+  opacity: 0;
+}
+
 .header-svg-image {
   height: 37rem;
 }

@@ -35,7 +35,10 @@
 		// position: relative;
 		// background: url('../res/svg/Me_Background.svg') no-repeat;
 		// background-size: contain;
-
+		#Me,
+		#Background {
+			opacity: 0;
+		}
 		&-image {
 			height: 37rem;
 			@media only screen and (max-width: 1200px) {
