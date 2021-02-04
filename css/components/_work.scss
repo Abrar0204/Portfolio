@@ -38,21 +38,31 @@
 			position: relative;
 
 			&.pokedex {
-				background-image: linear-gradient(to bottom right, #ec1a23, #5a0004);
+				background: #ec1a23;
+				background: linear-gradient(to bottom right, #ec1a23, #5a0004);
 				@media only screen and (max-width: $largeMobile) {
-					background-image: none;
+					background: none;
 				}
 			}
 			&.medid {
-				background-image: linear-gradient(to bottom right, #42a5ff, #005aab);
+				background: #42a5ff;
+				background: linear-gradient(to bottom right, #42a5ff, #005aab);
 				@media only screen and (max-width: $largeMobile) {
-					background-image: none;
+					background: none;
 				}
 			}
 			&.emaily {
-				background-image: linear-gradient(to bottom right, #5a809b, #00344b);
+				background: #5a809b;
+				background: linear-gradient(to bottom right, #5a809b, #00344b);
 				@media only screen and (max-width: $largeMobile) {
-					background-image: none;
+					background: none;
+				}
+			}
+			&.dot-mandalorian {
+				background: rgb(6, 23, 41);
+				background: linear-gradient(90deg, rgba(6, 23, 41, 1) 0%, rgba(7, 49, 93, 1) 100%);
+				@media only screen and (max-width: $largeMobile) {
+					background: none;
 				}
 			}
 			@media only screen and (max-width: $largeMobile) {

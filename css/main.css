@@ -717,8 +717,8 @@ body {
 }
 
 .about-image-box-photo {
-  background: url("./res/images/Me.jpg") no-repeat;
-  background-size: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
   position: absolute;
   z-index: 2;
@@ -866,35 +866,50 @@ body {
 }
 
 .work-content .work-item.pokedex {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#ec1a23), to(#5a0004));
-  background-image: linear-gradient(to bottom right, #ec1a23, #5a0004);
+  background: #ec1a23;
+  background: -webkit-gradient(linear, left top, right bottom, from(#ec1a23), to(#5a0004));
+  background: linear-gradient(to bottom right, #ec1a23, #5a0004);
 }
 
 @media only screen and (max-width: 580px) {
   .work-content .work-item.pokedex {
-    background-image: none;
+    background: none;
   }
 }
 
 .work-content .work-item.medid {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#42a5ff), to(#005aab));
-  background-image: linear-gradient(to bottom right, #42a5ff, #005aab);
+  background: #42a5ff;
+  background: -webkit-gradient(linear, left top, right bottom, from(#42a5ff), to(#005aab));
+  background: linear-gradient(to bottom right, #42a5ff, #005aab);
 }
 
 @media only screen and (max-width: 580px) {
   .work-content .work-item.medid {
-    background-image: none;
+    background: none;
   }
 }
 
 .work-content .work-item.emaily {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#5a809b), to(#00344b));
-  background-image: linear-gradient(to bottom right, #5a809b, #00344b);
+  background: #5a809b;
+  background: -webkit-gradient(linear, left top, right bottom, from(#5a809b), to(#00344b));
+  background: linear-gradient(to bottom right, #5a809b, #00344b);
 }
 
 @media only screen and (max-width: 580px) {
   .work-content .work-item.emaily {
-    background-image: none;
+    background: none;
+  }
+}
+
+.work-content .work-item.dot-mandalorian {
+  background: #061729;
+  background: -webkit-gradient(linear, left top, right top, from(#061729), to(#07315d));
+  background: linear-gradient(90deg, #061729 0%, #07315d 100%);
+}
+
+@media only screen and (max-width: 580px) {
+  .work-content .work-item.dot-mandalorian {
+    background: none;
   }
 }
 
