@@ -48,7 +48,7 @@ function init() {
 		const successAlert = document.getElementById('alert-success');
 		const errorAlert = document.getElementById('alert-error');
 
-		const res = await fetch('https://79ab01ab26a6.ngrok.io/api/contact', {
+		const res = await fetch('https://abrar-portfolio-server.herokuapp.com/api/contact', {
 			method: 'POST',
 			body: JSON.stringify({
 				email,
