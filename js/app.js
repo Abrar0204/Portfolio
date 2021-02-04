@@ -1,9 +1,14 @@
 gsap.registerPlugin(ScrollTrigger);
 
+const submitForm = async () => {};
+
 function toggleMenu() {
 	const menu = document.querySelector('.navbar');
-
 	menu.classList.toggle('open');
+}
+function validateEmail(email) {
+	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(String(email).toLowerCase());
 }
 
 function init() {
@@ -15,6 +20,64 @@ function init() {
 	const skills = document.getElementById('skills');
 	const works = document.getElementById('work');
 	const workItems = [ ...document.querySelectorAll('.work-item') ];
+
+	const form = document.getElementById('contactForm');
+	const emailError = document.getElementById('email-input');
+
+	emailError.addEventListener('keypress', (event) => {
+		if (!validateEmail(emailError.value)) {
+			if (!emailError.classList.contains('error')) {
+				console.log('added');
+				emailError.classList.add('error');
+			}
+		} else {
+			if (emailError.classList.contains('error')) {
+				console.log('removed');
+				emailError.classList.remove('error');
+			}
+		}
+	});
+
+	form.addEventListener('submit', async (event) => {
+		event.preventDefault();
+
+		const email = document.getElementById('email-input').value;
+		const name = document.getElementById('name-input').value;
+		const subject = document.getElementById('subject-input').value;
+		const message = document.getElementById('message-input').value;
+		const successAlert = document.getElementById('alert-success');
+		const errorAlert = document.getElementById('alert-error');
+
+		const res = await fetch('https://79ab01ab26a6.ngrok.io/api/contact', {
+			method: 'POST',
+			body: JSON.stringify({
+				email,
+				name,
+				subject,
+				message
+			}),
+			headers: {
+				'Content-type': 'application/json; charset=UTF-8'
+			}
+		});
+
+		const data = await res.json();
+
+		if (data.success) {
+			const h3 = document.getElementById('alert-text');
+			h3.textContent = data.message;
+			gsap.to(successAlert, { bottom: 0 });
+			setTimeout(() => {
+				gsap.to(successAlert, { bottom: '-100vw' });
+			}, 3000);
+		} else {
+			gsap.to(errorAlert, { bottom: 0 });
+			setTimeout(() => {
+				gsap.to(errorAlert, { bottom: '-100vw' });
+			}, 3000);
+		}
+		return false;
+	});
 
 	const headerTimeline = gsap.timeline({});
 

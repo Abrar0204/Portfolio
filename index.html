@@ -843,7 +843,54 @@
 
             </div>
         </section>
-        <section class="contact" id="contact"></section>
+        <section class="contact" id="contact">
+            <div class="contact-info">
+                <h1>You can also find me on</h1>
+            </div>
+            <div class="alert success" id="alert-success">
+                <h3 id="alert-text">Cool! I'll get in touch with you as soon as I can.</h3>
+                <!-- <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="white" fillRule="evenodd"
+                    clipRule="evenodd">
+                    <path
+                        d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z" />
+                </svg> -->
+            </div>
+            <div class="alert error" id="alert-error">
+                <h3>Oops! Something went wrong. Try again later.</h3>
+                <!-- <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="white" fillRule="evenodd"
+                    clipRule="evenodd">
+                    <path
+                        d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z" />
+                </svg> -->
+            </div>
+            <form id='contactForm' class="contact-form">
+                <h3 class="header-source-code">Get In Touch!</h3>
+                <fieldset>
+                    <input type="email" name="email" value="" id="email-input" required
+                        onkeydown="return event.key != 'Enter';" />
+                    <label for="email">Your Email</label>
+
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="name" value="" id="name-input" required
+                        onkeydown="return event.key != 'Enter';" />
+                    <label for="name">Your Name</label>
+                </fieldset>
+                <fieldset>
+                    <input type="text" name="subject" value="" id="subject-input" required
+                        onkeydown="return event.key != 'Enter';" />
+                    <label for="subject">What kind of website do you need?</label>
+                </fieldset>
+                <fieldset>
+                    <!-- <input type="text" name="message" value="" id="message-input" required /> -->
+                    <textarea name="message" id="message-input" required></textarea>
+                    <label for="message">Can you tell me a bit more about it?</label>
+                </fieldset>
+
+                <input type="submit" class="button form" value="Send" class="header-source-code" />
+            </form>
+
+        </section>
         <footer class="footer">
 
             <div class="copyright">

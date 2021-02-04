@@ -389,7 +389,7 @@ body {
 }
 
 .header-source-code {
-  font-family: 'Source Code Pro', 'Nunito', sans-serif;
+  font-family: 'Source Code Pro', 'Open Sans', sans-serif;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -1028,6 +1028,196 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 630px) {
+  .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.contact-info {
+  width: 50%;
+}
+
+@media only screen and (max-width: 630px) {
+  .contact-info {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+.contact-form {
+  width: 50%;
+  height: 80vh;
+  background-color: #1d182f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 630px) {
+  .contact-form {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+.contact-form h3 {
+  font-size: 3rem;
+  color: #f3f6ff;
+  letter-spacing: .2rem;
+  margin: 1rem 0rem;
+}
+
+.contact-form fieldset {
+  outline: none;
+  border: none;
+  position: relative;
+  margin: .75rem 0rem;
+  width: 70%;
+}
+
+.contact-form fieldset label {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #9f97b5;
+  font-size: 1.7rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  pointer-events: none;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-form fieldset input {
+  font-family: 'Open Sans';
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #9f97b5;
+  padding: 1rem 0rem;
+  margin: 1.5rem 0rem;
+  color: #f3f6ff;
+  text-align: center;
+  font-size: 1.8rem;
+  z-index: 2;
+}
+
+.contact-form fieldset input:focus ~ label,
+.contact-form fieldset input:valid ~ label {
+  font-size: 1.3rem;
+  top: 0;
+}
+
+.contact-form fieldset input.error ~ label {
+  font-size: 1.2rem;
+  top: 0;
+}
+
+.contact-form fieldset textarea {
+  outline: none;
+  resize: none;
+  width: 100%;
+  height: 10rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #9f97b5;
+  color: #f3f6ff;
+  padding: 1rem 0rem;
+  margin: 1.5rem 0rem;
+  font-size: 1.5rem;
+  font-family: 'Open Sans';
+}
+
+.contact-form fieldset textarea:focus ~ label,
+.contact-form fieldset textarea:valid ~ label {
+  font-size: 1.3rem;
+  top: 0;
+}
+
+.contact-form .button.form {
+  margin: 1rem 0rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  background-color: #f3f6ff;
+  border: none;
+  outline: none;
+  width: 40%;
+}
+
+.contact-form .button.form:hover {
+  cursor: pointer;
+}
+
+.contact .alert {
+  position: fixed;
+  bottom: -100vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 10;
+  height: 100px;
+  width: 500px;
+  background-color: #1d182f;
+  color: #f3f6ff;
+  margin: 2rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .alert h3 {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 3rem;
+  width: 100%;
+  letter-spacing: .1rem;
+}
+
+.contact .alert svg {
+  width: 10%;
+}
+
+.contact .alert svg:hover {
+  cursor: pointer;
 }
 
 .footer {
