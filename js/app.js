@@ -27,12 +27,12 @@ function init() {
 	emailError.addEventListener('keypress', (event) => {
 		if (!validateEmail(emailError.value)) {
 			if (!emailError.classList.contains('error')) {
-				console.log('added');
+				// console.log('added');
 				emailError.classList.add('error');
 			}
 		} else {
 			if (emailError.classList.contains('error')) {
-				console.log('removed');
+				// console.log('removed');
 				emailError.classList.remove('error');
 			}
 		}
@@ -289,36 +289,3 @@ function init() {
 window.addEventListener('load', () => {
 	init();
 });
-
-// skillItems.forEach((skillItem) => {
-//     skillItem.addEventListener('mouseover', (event) => {
-//         console.log(`clientX: ${event.clientX}`);
-//         console.log(`clientY: ${event.clientY}`);
-
-//         let offest = event.target.getBoundingClientRect();
-//         console.log(`offset: ${offest.left} ${offest.top}`);
-//         let xPos = event.clientX - offest.left;
-//         let yPos = event.clientY - offest.top;
-//         if (yPos > skillItem.clientHeight / 2) {
-//             yPos *= -1;
-//         }
-//         if (xPos > skillItem.clientWidth / 2) {
-//             xPos *= -1;
-//         }
-//         console.log(xPos);
-//         console.log(yPos);
-//         let box = skillItem;
-//         gsap.to(box, 0.6, {
-//             rotationY: yPos / 10,
-//             rotationX: xPos / 10,
-//             ease: Power4.easeOut
-//         });
-//     });
-//     skillItem.addEventListener('mouseleave', (event) => {
-//         gsap.to(skillItem, 0.6, {
-//             rotationY: 0,
-//             rotationX: 0,
-//             ease: Power4.easeOut
-//         });
-//     });
-// });
