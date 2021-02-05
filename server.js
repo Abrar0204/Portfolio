@@ -25,7 +25,7 @@ app.post('/api/contact', (req, res) => {
 	try {
 		const mailOptions = {
 			from: req.body.email, // sender address
-			to: process.env.email, // list of receivers
+			to: process.env.EMAIL, // list of receivers
 			subject: `Contact Request from ${req.body.name}`, // Subject line
 			html: `
         <p>You have a new contact request.</p>
