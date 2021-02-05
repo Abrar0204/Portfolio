@@ -1115,7 +1115,7 @@ body {
           align-items: center;
   font-size: 1.6rem;
   color: #1d182f;
-  margin: 1.5rem 0rem;
+  margin: 2rem 0rem;
 }
 
 .contact-info .contact-icons .button-contact:link, .contact-info .contact-icons .button-contact:visited {
@@ -1124,7 +1124,7 @@ body {
 
 .contact-info .contact-icons .button-contact img {
   width: 3rem;
-  margin: 0rem .5rem;
+  margin: 0rem 1rem;
 }
 
 .contact-info .contact-icons .button-contact img.resume {
@@ -1133,7 +1133,9 @@ body {
 }
 
 .contact-info .contact-icons .button-contact h3 {
-  margin: 0rem .5rem;
+  margin: 0rem 1rem;
+  text-decoration: underline;
+  font-size: 16px;
 }
 
 .contact-form {

@@ -45,7 +45,7 @@
 				align-items: center;
 				font-size: 1.6rem;
 				color: $textColor;
-				margin: 1.5rem 0rem;
+				margin: 2rem 0rem;
 				&:link,
 				&:visited {
 					text-decoration: none;
@@ -53,14 +53,16 @@
 
 				img {
 					width: 3rem;
-					margin: 0rem .5rem;
+					margin: 0rem 1rem;
 					&.resume {
 						width: 2.5rem;
 						margin: 0rem 1rem;
 					}
 				}
 				h3 {
-					margin: 0rem .5rem;
+					margin: 0rem 1rem;
+					text-decoration: underline;
+					font-size: 16px;
 				}
 			}
 		}
