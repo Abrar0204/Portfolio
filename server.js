@@ -42,7 +42,7 @@ app.post('/api/contact', (req, res) => {
 			if (err) {
 				res.status(500).send({
 					success: false,
-					message: 'Something went wrong. Try again later'
+					message: err.message
 				});
 			} else {
 				res.send({
