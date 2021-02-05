@@ -43,7 +43,7 @@ function init() {
 
 		const email = document.getElementById('email-input').value;
 		const name = document.getElementById('name-input').value;
-		const subject = document.getElementById('subject-input').value;
+		// const subject = document.getElementById('subject-input').value;
 		const message = document.getElementById('message-input').value;
 		const successAlert = document.getElementById('alert-success');
 		const errorAlert = document.getElementById('alert-error');
@@ -53,7 +53,7 @@ function init() {
 			body: JSON.stringify({
 				email,
 				name,
-				subject,
+				// subject,
 				message
 			}),
 			headers: {
@@ -173,8 +173,8 @@ function init() {
 		scrollTrigger: {
 			trigger: about,
 			start: 'top center+=20%',
-			end: 'end center',
-			toggleActions: 'play none none reverse'
+			end: 'end center'
+			// toggleActions: 'play none none reverse'
 			// markers: true
 		}
 	});
@@ -223,8 +223,8 @@ function init() {
 		scrollTrigger: {
 			trigger: skills,
 			start: 'center-=5% bottom-=10%',
-			end: 'end center',
-			toggleActions: 'play none none reverse'
+			end: 'end center'
+			// toggleActions: 'play none none reverse'
 			// markers: true
 		}
 	});
@@ -241,8 +241,8 @@ function init() {
 		scrollTrigger: {
 			trigger: works,
 			start: 'start+=20% bottom-=10%',
-			end: 'end center',
-			toggleActions: 'play none none reverse'
+			end: 'end center'
+			// toggleActions: 'play none none reverse'
 		}
 	});
 
