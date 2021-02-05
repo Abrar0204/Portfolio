@@ -27,12 +27,10 @@ function init() {
 	emailError.addEventListener('keypress', (event) => {
 		if (!validateEmail(emailError.value)) {
 			if (!emailError.classList.contains('error')) {
-				// console.log('added');
 				emailError.classList.add('error');
 			}
 		} else {
 			if (emailError.classList.contains('error')) {
-				// console.log('removed');
 				emailError.classList.remove('error');
 			}
 		}

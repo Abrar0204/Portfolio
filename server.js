@@ -47,15 +47,11 @@ app.post('/api/contact', (req, res) => {
 			} else {
 				res.send({
 					success: true,
-					message: 'Thanks for contacting us. We will get back to you shortly'
+					message: `Cool! I will get in touch with you as soon as I can, ${req.body.name}`
 				});
 			}
 		});
 		// console.log(req.body);
-		res.send({
-			success: true,
-			message: `Cool! I will get in touch with you as soon as I can, ${req.body.name}`
-		});
 	} catch (err) {
 		res.status(500).send({
 			success: false,
