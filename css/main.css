@@ -821,7 +821,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   margin: 6rem 0rem;
 }
 
@@ -909,6 +909,18 @@ body {
 
 @media only screen and (max-width: 580px) {
   .work-content .work-item.dot-mandalorian {
+    background: none;
+  }
+}
+
+.work-content .work-item.rhino {
+  background: #0a2136;
+  background: -webkit-gradient(linear, left top, right top, from(#0a2136), to(#173e61));
+  background: linear-gradient(90deg, #0a2136 0%, #173e61 100%);
+}
+
+@media only screen and (max-width: 580px) {
+  .work-content .work-item.rhino {
     background: none;
   }
 }
