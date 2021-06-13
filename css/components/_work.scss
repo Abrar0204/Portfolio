@@ -69,6 +69,13 @@
 					background: none;
 				}
 			}
+			&.kickstart {
+				background: #1e2023;
+				background: linear-gradient(90deg, #25272b 0%, #090c11 100%);
+				@media only screen and (max-width: $largeMobile) {
+					background: none;
+				}
+			}
 			&.rhino {
 				background: #0a2136;
 				background: linear-gradient(90deg, #0a2136 0%, #173e61 100%);

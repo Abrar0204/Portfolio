@@ -913,6 +913,18 @@ body {
   }
 }
 
+.work-content .work-item.kickstart {
+  background: #1e2023;
+  background: -webkit-gradient(linear, left top, right top, from(#25272b), to(#090c11));
+  background: linear-gradient(90deg, #25272b 0%, #090c11 100%);
+}
+
+@media only screen and (max-width: 580px) {
+  .work-content .work-item.kickstart {
+    background: none;
+  }
+}
+
 .work-content .work-item.rhino {
   background: #0a2136;
   background: -webkit-gradient(linear, left top, right top, from(#0a2136), to(#173e61));
